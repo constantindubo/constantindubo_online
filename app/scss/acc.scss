@@ -1,0 +1,124 @@
+.acc__section {
+    padding: $button-size 0px;
+}
+
+
+
+.acc__row {
+    /*position: relative;*/
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0px;
+}
+
+.acc__mainrow {
+    /*padding: 48px 0px 12px 0px;*/
+    
+    /*border-bottom: 1px dashed $line-color;*/
+    /*box-shadow: 0 8px 6px -6px black;*/
+    
+    .acc__stcell {
+    font-weight: bold;
+}
+}
+
+
+
+/* Начало скрытый блок аккордеона */
+
+.acc__hideblock {
+    display: none;
+}
+
+.acc__hiderow {
+    /*border-bottom: 1px dashed $line-color;*/
+    padding: 12px 0px 24px 0px;
+    box-sizing: border-box;
+    display: flex;
+    .acc__stcell {
+        padding-left: $button-size;
+    }  
+    /*box-shadow: 0 8px 6px -6px black;*/
+}
+
+/* Конец скрытый блок аккордеона */
+
+/* Начало внутренние ячейки */
+
+.acc__stcell {
+    width: 50%;
+}
+
+.acc__ndcell {
+    width: 30%;
+    display: flex;
+    /*justify-content: flex-end;*/
+}
+
+/* Конец внутренние ячейки */
+
+/* Начало переключатель */
+.acc__togglewrapper {
+    border-top: $line-border;
+    height: $button-size;
+}
+
+.acc__toggle {
+    position: absolute;
+    margin-left: -9px;
+    margin-top: -9px;
+    /*margin-bottom: 24px;*/
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    cursor: pointer;
+    color: $button-color;
+    /*box-shadow: $basic-shadow;*/
+    width: $button-size;
+    height: $button-size;
+    /*border: $button-border;*/
+    font-size: 24px;
+    /*border-radius: 50%;*/
+
+    /* Начало стилей icomoon */
+    
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: $button-size;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+    /*Конец стилей icomoon */
+
+    &:hover {
+        text-shadow: 0px 3px 6px 1px rgba(0, 0, 0, 0.25);
+    }
+
+    &:active {
+        /*box-shadow: $basic-shadow;*/
+        background-color: rgba($button-color, 0.1);
+    }
+    
+    
+    
+
+    &:before {
+        content: "\e900";
+    }
+}
+
+.acc__toggle_open {
+    margin-top: -28px;
+     align-items: flex-end;
+    &:before {
+        content: "\e901";
+        transition-duration: 1s;
+        
+    }
+}
+
+/* Конец переключатель */

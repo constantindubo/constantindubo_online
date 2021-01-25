@@ -1,0 +1,73 @@
+/* Начало подключение общих шрифтов */
+
+@mixin font($font_name, $file_name, $weight, $style) {
+
+    @font-face {
+        font-family: $font_name;
+        font-display: swap;
+        src: url("../fonts/#{$file_name}.ttf") format("truetype");
+        font-weight: #{$weight};
+        font-style: #{$style};
+    }
+}
+
+@include font("Roboto Condensed", "RobotoCondensed-Light",   "300", "normal");
+@include font("Roboto Condensed", "RobotoCondensed-Regular", "400", "normal");
+@include font("Roboto Condensed", "RobotoCondensed-Bold",    "700", "normal");
+@include font("PT Serif",         "PTSerif-Regular",         "400", "normal");
+@include font("PT Serif",         "PTSerif-Bold",            "700", "normal");
+
+@include font("Roboto", "Roboto-Thin",    "100", "normal");
+@include font("Roboto", "Roboto-Light",   "300", "normal");
+@include font("Roboto", "Roboto-Regular", "400", "normal");
+@include font("Roboto", "Roboto-Bold",    "700", "normal");
+@include font("Oswald", "Oswald-Regular", "400", "normal");
+
+@include font("Slick",  "Slick",          "700", "normal");
+
+/* Конец подключение общих шрифтов */
+
+
+/* Начало задание переменных для шрифтов */
+$head-font: 'Oswald';
+/* Конец задание переменных для шрифтов */
+
+
+/* Начало подключения иконочных шрифтов */
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?gjxzob');
+  src:  url('../fonts/icomoon.eot?gjxzob#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf') format('truetype'),
+    url('../fonts/icomoon.woff?gjxzob') format('woff'),
+    url('../fonts/icomoon.svg?gjxzob#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], 
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow-right2:before {
+  content: "\ea3c";
+}
+.icon-arrow-left2:before {
+  content: "\ea40";
+}
+
+/* Конец подключения иконочных шрифтов */

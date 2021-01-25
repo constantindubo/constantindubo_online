@@ -1,0 +1,700 @@
+$button-color: blue;
+$line-color: grey;
+$button-size: 36px;
+$basic-shadow: 0px 3px 2px 1px rgba(0,0,0,0.25);
+$button-border: 2px solid $button-color;
+$line-border: 2px solid $line-color;
+
+
+@import 'reset.scss';
+@import 'fonts.scss';
+//  @import 'slick.scss';
+//  @import 'slick-theme.scss';
+@import 'certificate.scss';
+@import 'acc.scss';
+@import 'skills.scss';
+@import 'myform.scss';
+
+
+
+body {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+p {
+    padding: 6px 0;
+}
+
+/* Начало оформление отдельных элементов */
+
+.textblock {
+    padding: 12px 0px;
+}
+
+.mylist {
+    list-style-type: square;
+    list-style-position: outside;
+    list-style-image: none;
+
+}
+
+.mypages__wrapper {
+    padding: 48px 0px;
+    display: flex;
+    width: 100%;
+}
+
+.mypages__textcol {
+    width: 60%;
+    padding-right: 24px;
+}
+
+.mypages__iconcol {
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.mypages__icon {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-size: cover;
+}
+
+.mypages__icon_pdf {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' class='undefined'%3E%3Cstyle%3E .a%7B fill:%23C30B15; %7D .b%7B fill:%2385080E; %7D .c%7B fill:%23FFF; %7D .d%7B fill:%23E8E6E6; %7D .e%7B fill:%23FC0F1A; %7D%0A%3C/style%3E%3Cpath d='M511.3 274.3C511.8 268.2 512 262.1 512 256 512 114.6 397.4 0 256 0S0 114.6 0 256c0 117.8 79.5 216.9 187.8 246.8L511.3 274.3z' class='a'/%3E%3Cpath d='M511.3 274.3L315 77.9 119.1 434.1l68.7 68.7C209.5 508.8 232.4 512 256 512 391.2 512 502 407.1 511.3 274.3z' class='b'/%3E%3Cpolygon points='278.3 333.9 255.7 77.9 119.1 77.9 119.1 311.7 ' class='c'/%3E%3Cpolygon points='392.9 311.7 392.9 155.8 337.3 133.6 315 77.9 255.7 77.9 256.1 333.9 ' class='d'/%3E%3Cpolygon points='315 155.8 315 77.9 392.9 155.8 ' class='c'/%3E%3Crect x='119.1' y='311.7' width='273.8' height='122.4' class='e'/%3E%3Cpath d='M204.9 346.4c13.5 0 21.3 6.7 21.3 18.5 0 12.4-7.8 19.6-21.3 19.6h-9.6v14.9h-13.5v-53L204.9 346.4 204.9 346.4zM195.3 373.9h8.9c5.9 0 9.3-3 9.3-8.6 0-5.5-3.4-8.3-9.3-8.3h-8.9V373.9z' class='c'/%3E%3Cpath d='M257.9 346.4c16.6 0 28.2 10.7 28.2 26.5 0 15.7-11.7 26.5-28.7 26.5h-22.2v-53H257.9zM248.6 388.6h9.6c8.2 0 14.2-6.4 14.2-15.7 0-9.4-6.2-15.8-14.8-15.8h-9V388.6z' class='c'/%3E%3Cpath d='M308.6 357v12.3h23.8v10.6h-23.8v19.5h-13.5v-53h39.3v10.6h-25.8V357z' class='c'/%3E%3C/svg%3E");
+}
+
+.mypages__icon_in {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='128' viewBox='0 0 128 128' width='128' class='undefined'%3E%3Cstyle%3E .a%7B fill:%230076B4; %7D .b%7B fill:%23FFF; %7D%0A%3C/style%3E%3Ccircle cx='64' cy='64' r='64' class='a'/%3E%3Cpath d='M44 96H29V48h15V96zM37 41c-5 0-9-4-9-9 0-5 4-9 9-9 5 0 9 4 9 9C45 37 41 41 37 41zM100 96H85V73c0-6 0-13-8-13 -8 0-9 6-9 12v24H53V48H68v7h0c2-4 7-8 14-8 15 0 18 10 18 23L100 96 100 96z' class='b'/%3E%3C/svg%3E");
+}
+
+.mypages__icon_hh {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='267' height='267' viewBox='0 0 267 267' class='undefined'%3E%3Cstyle%3E .a%7B fill:%23e20019; %7D .b%7B fill:%23fff; font-variation-settings:normal; stop-color:%23000; vector-effect:none; %7D%0A%3C/style%3E%3Cellipse cx='132' cy='132' rx='132' ry='132' class='a'/%3E%3Cpath d='m53 71h22v46c0 0 13-17 31-12 21 5 21 22 21 38v45h-21c0 0 0-31 0-46 0-14-6-26-21-20-5 2-10 8-10 26 0 13 0 24 0 40-13 0-22 0-22 0z' class='b'/%3E%3Cpath d='m137 71h22v46c0 0 13-17 31-12 21 5 21 22 21 38v45h-21c0 0 0-31 0-46 0-14-6-26-21-20-5 2-10 8-10 26 0 13 0 24 0 40-13 0-22 0-22 0z' class='b'/%3E%3C/svg%3E");
+}
+
+
+
+
+
+
+
+/* Конец оформление отдельных элементов */
+
+
+
+
+/*ГЛОБАЛЬНАЯ РАЗМЕТКА: ЦВЕТА И ОФОРМЛЕНИЕ */
+
+.inner {
+    background-color: blue;
+}
+
+header {
+    background-color: black;
+}
+
+.mainarea {
+    background-color: white;
+    color: black;
+}
+
+footer {
+    grid-area: f;
+    background-color: purple;
+}
+
+.mainarea__spacewrapper {
+    padding: 48px;
+    max-width: 100%;
+}
+
+/*КОНЕЦ: ГЛОБАЛЬНАЯ РАЗМЕТКА: ЦВЕТА И ОФОРМЛЕНИЕ */
+
+
+/*НАЧАЛО ГЛОБАЛЬНАЯ РАЗМЕТКА: ГРИД-РАСКЛАДКА */
+
+
+/* начало десктоп */
+
+@media screen and (min-width: 1400px) {
+    .inner {
+        box-sizing: border-box;
+        display: grid;
+        /*grid-template-rows: 100vh 1fr 1fr;*/
+        grid-template-columns: 1fr 50vw 2fr;
+        grid-template-areas: "h m f""h m f""h m f";
+    }
+
+    header {
+        grid-area: h;
+    }
+
+    .mainarea {
+        grid-area: m;
+        min-height: 300px;
+        box-sizing: border-box;
+    }
+
+    footer {
+        grid-area: f;
+        box-sizing: border-box;
+    }
+
+    nav {
+        min-height: 100vh;
+    }
+}
+
+
+/* конец десктоп */
+
+
+/* начало ноутбук */
+
+@media screen and (min-width: 1000px) and (max-width: 1399px) {
+    .inner {
+        box-sizing: border-box;
+        display: grid;
+        /*grid-template-rows: 1fr 1fr;*/
+        grid-template-columns: 240px 1fr;
+        grid-template-areas: "h m m""h f f";
+    }
+
+    header {
+        grid-area: h;
+    }
+
+    .mainarea {
+        grid-area: m;
+        box-sizing: border-box;
+    }
+
+    footer {
+        grid-area: f;
+        box-sizing: border-box;
+    }
+
+    nav {
+        min-height: 100vh;
+    }
+}
+
+
+/* конец ноутбук */
+
+
+/* начало планшет */
+
+@media screen and (min-width: 800px) and (max-width: 999px) {
+    .inner {
+        box-sizing: border-box;
+        display: grid;
+        grid-template-rows: 90px 1fr;
+        grid-template-columns: 1fr 50vw 1fr;
+        grid-template-areas: "h h h""m m m""f f f";
+    }
+
+    header {
+        grid-area: h;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+    }
+
+    .mainarea {
+        grid-area: m;
+        box-sizing: border-box;
+    }
+
+    footer {
+        grid-area: f;
+        box-sizing: border-box;
+    }
+}
+
+
+/* конец планшет */
+
+
+/* начало смартфон */
+
+
+/*
+@media screen and (max-width: 799px) {
+    .inner {
+        box-sizing: border-box;
+       display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 50vw 1fr;
+        grid-template-areas: "h h h" "m m m" "f f f";
+    }
+    header {
+        grid-area: h;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+    }
+    .mainarea {
+        grid-area: m;
+        box-sizing: border-box;
+    }
+    footer {
+        grid-area: f;
+        box-sizing: border-box;
+    }
+}
+*/
+
+
+/* конец смартфон */
+
+
+/*КОНЕЦ ГЛОБАЛЬНАЯ РАЗМЕТКА: ГРИД-РАСКЛАДКА */
+
+h1 {
+    padding: 48px 0px 24px 0px;
+    font-family: $head-font, sans-serif;
+    font-size: 36px;
+    line-height: 1.2;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+h2 {
+    padding-bottom: 20px;
+    font-family: $head-font, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 3px 0px;
+    color: #1c1c1c;
+    border-bottom: 2px dashed #1c1c1c;
+    margin-top: 40px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+footer h2 {
+    color: white;
+    margin-top: 12px;
+    border-bottom: 2px dashed white;
+
+}
+
+h3 {
+    padding-bottom: 20px;
+    font-family: $head-font, sans-serif;
+    font-size: 1.2rem;
+}
+
+
+/*** HEADER ***/
+
+
+/* начало десктоп */
+
+@media screen and (min-width: 1400px) {
+    .header__stickywrapper {
+        color: white;
+        box-sizing: border-box;
+        position: sticky;
+        top: 0px;
+    }
+
+    nav {
+        width: 100%;
+        /*min-height: 100vh;  ПЕРЕНЕСЕН В ДЕСКТОПЫ */
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        font-family: $head-font, sans-serif;
+        font-size: 1.8rem;
+    }
+
+    .globalnav a {
+        text-decoration: none;
+        color: lightgray;
+        text-transform: uppercase;
+        border-right: 3px solid black;
+        font-family: $head-font, sans-serif;
+        background-color: black;
+        display: block;
+        text-align: right;
+        padding: 10px 10px;
+        font-size: 20px;
+    }
+
+    .globalnav a:hover {
+        text-decoration: none;
+        color: white;
+        background-color: black;
+        text-transform: uppercase;
+        text-shadow: 1px 1px 10px springgreen;
+        border-right: 3px solid springgreen;
+    }
+}
+
+
+/* конец десктоп */
+
+
+/* начало ноутбук*/
+
+@media screen and (min-width: 1000px) and (max-width: 1399px) {
+    .header__stickywrapper {
+        color: white;
+        box-sizing: border-box;
+        position: sticky;
+        top: 0px;
+    }
+
+    nav {
+        width: 100%;
+        /*min-height: 100vh;  ПЕРЕНЕСЕН В ДЕСКТОПЫ */
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        font-family: $head-font, sans-serif;
+        font-size: 1.8rem;
+    }
+
+    .globalnav a {
+        text-decoration: none;
+        color: lightgrey;
+        text-transform: uppercase;
+        border-right: 5px solid black;
+        font-family: $head-font, sans-serif;
+        background-color: black;
+        display: block;
+        text-align: right;
+        padding: 10px 20px;
+        font-size: 20px;
+    }
+
+    .globalnav a:hover {
+        text-decoration: none;
+        color: white;
+        background-color: black;
+        text-transform: uppercase;
+        text-shadow: 1px 1px 10px springgreen;
+        border-right: 5px solid springgreen;
+    }
+}
+
+
+/* конец ноутбук */
+
+
+/* начало планшет*/
+
+@media screen and (min-width: 800px) and (max-width: 999px) {
+    .header__stickywrapper {
+        color: white;
+        box-sizing: border-box;
+        position: sticky;
+        top: 0px;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .logo__container {
+        background-color: yellow;
+        height: 200px;
+        box-sizing: border-box;
+    }
+
+    .globalnav li {
+        display: inline-block;
+        padding: 5px;
+    }
+
+    /*.globalnav {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-content: center;
+        }*/
+    ul.nav__menu {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .globalnav a {
+        text-decoration: none;
+        color: lightgray;
+        text-transform: uppercase;
+        border-bottom: 5px solid black;
+        font-family: $head-font, sans-serif;
+        background-color: black;
+        text-align: center;
+        padding: 10px 5px;
+        font-size: 20px;
+    }
+
+    .globalnav a:hover {
+        text-decoration: none;
+        color: white;
+        background-color: black;
+        text-transform: uppercase;
+        text-shadow: 1px 1px 10px springgreen;
+        border-bottom: 5px solid springgreen;
+    }
+}
+
+
+/* конец планшет */
+
+
+/* начало смартфон*/
+
+@media screen and (max-width: 799px) {
+    .header__stickywrapper {
+        color: white;
+        box-sizing: border-box;
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        align-content: center;
+    }
+
+    .globalnav {
+        display: block;
+        width: 100%;
+    }
+
+    .logo__container {
+        background-color: yellow;
+        height: 200px;
+        box-sizing: border-box;
+    }
+
+    .globalnav li {
+        display: inline-block;
+        padding: 5px;
+    }
+
+    /*.globalnav {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-content: center;
+        }*/
+    .globalnav ul {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .globalnav li {
+        width: 100%;
+    }
+
+    .globalnav a {
+        display: block;
+        text-decoration: none;
+        color: lightgray;
+        text-transform: uppercase;
+        border-bottom: 3px solid black;
+        font-family: $head-font, sans-serif;
+        background-color: black;
+        text-align: center;
+        font-size: 20px;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .globalnav a:hover {
+        text-decoration: none;
+        color: white;
+        background-color: black;
+        text-transform: uppercase;
+        text-shadow: 1px 1px 10px springgreen;
+        border-bottom: 3px solid springgreen;
+    }
+}
+
+
+/* конец смартфон*/
+
+
+/*
+a {
+	display: block;
+	text-align: right;
+	padding: 10px 20px;
+	font-size: 20px;
+}
+*/
+
+
+/* MAIN */
+
+p a {
+    text-decoration-style: underline;
+    color: black;
+}
+
+p a:hover {
+    text-decoration-style: underline;
+    color: black;
+    display: inline-block;
+    background-color: springgreen;
+    border-radius: 5px;
+}
+
+table {
+    width: 100%;
+    vertical-align: center;
+}
+
+th {
+    background-color: darkgrey;
+    line-height: 90px;
+    width: 50%;
+    border: 3px solid darkgrey;
+}
+
+td {
+    background-color: white;
+    height: 90px;
+    width: 50%;
+    text-align: center;
+    vertical-align: center !important;
+    border-collapse: collapse;
+    border: 3px solid darkgrey;
+}
+
+.main__notecont ul {
+    padding-left: 20px;
+    /*padding: 10px 0;*/
+}
+
+.main__notecont p {
+    padding: 10px 0px;
+}
+
+
+/*конец: переделать под контекстую навигацию*/
+
+.chapter {
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: lightgrey;
+}
+
+.skills {
+    background-color: white;
+}
+
+.maintitle {
+    font-family: $head-font, sans-serif;
+    font-size: 32px;
+    line-height: 1.2;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 12px springgreen;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+/********** FOOTER **********/
+
+
+.footer__stickywrapper {
+    box-sizing: border-box;
+    background-color: blue;
+}
+
+.footer__1stcontainer {
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: grey;
+    color: white;
+}
+
+.footer__2ndcontainer {
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: darkslategrey;
+    color: white;
+}
+
+@media screen and (min-width: 1400px) {
+
+    .footer__stickywrapper {
+        position: sticky;
+        top: 0px;
+    }
+
+    .footer__1stcontainer {
+        height: 50vh;
+    }
+
+    .footer__2ndcontainer {
+        height: 50vh;
+    }
+}
+
+/*--------- footer */
+
+
+/********** меню сервисной навигации */
+
+.servnav__block {
+    display: inline-block;
+    padding: 20px 0px;
+}
+
+.servnav__link {
+    display: inline-block;
+    box-sizing: border-box;
+    color: lightgray;
+    text-decoration: none;
+    border-bottom: 1px dashed darkslategrey;
+    text-align: left;
+    padding: 5px 0;
+}
+
+.servnav__link:hover {
+    color: springgreen;
+    text-decoration: none;
+    border-bottom: 1px dashed springgreen;
+    text-align: left;
+}
+
+/********** меню контектной навигации */
+
+.contextlink {
+    color: black;
+    display: inline-block;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: 1px dashed grey;
+    border-radius: 5px;
+    padding: 0px 5px;
+    margin: 5px 0px 0px -5px;
+}
+
+.contextlink:hover {
+    background-color: springgreen;
+    border: 1px dashed grey;
+}
+
+
+/*--------- меню контектной навигации */
+
+.current {
+    font-weight: bold;
+    color: springgreen;
+    border-bottom: 1px dashed grey;
+}

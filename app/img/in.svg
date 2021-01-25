@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" height="128" viewBox="0 0 128 128" width="128" class="undefined">
+<style>
+  .a{
+    fill:#0076B4;
+  }
+  .b{
+    fill:#FFF;
+  }
+</style>
+    <circle cx="64" cy="64" r="64" class="a"/>
+    <path d="M44 96H29V48h15V96zM37 41c-5 0-9-4-9-9 0-5 4-9 9-9 5 0 9 4 9 9C45 37 41 41 37 41zM100 96H85V73c0-6 0-13-8-13 -8 0-9 6-9 12v24H53V48H68v7h0c2-4 7-8 14-8 15 0 18 10 18 23L100 96 100 96z" class="b"/>
+</svg>
