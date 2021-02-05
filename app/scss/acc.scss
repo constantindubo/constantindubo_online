@@ -16,9 +16,14 @@
     
     /*border-bottom: 1px dashed $line-color;*/
     /*box-shadow: 0 8px 6px -6px black;*/
+       height: 48px;
+    display: flex;
+    align-items: flex-end;
     
     .acc__stcell {
     font-weight: bold;
+        
+     
 }
 }
 
