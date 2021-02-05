@@ -1,45 +1,95 @@
+$html-color: #f06428;
+$css-color: #32aadc;
+$js-color: #f0be1e;
+
+/*$html-color: #939597;
+$css-color: #939597;
+$js-color: #939597;
+*/
+
+
 .skills__blockwrapper {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    /*padding-top: 3*$button-size;*/
 }
 
 
 
 .skills__block {
-    max-width: 30%;
-    display: flex;
+    max-width: 28%;
+    margin-top: 2*$button-size;
+    padding-top: 0.6*$button-size;
+    position: relative;
+    color: black;
+    font-size: 14px;
 }
-        
-        
 
-.skills__block_html{
-    
+.skills__textblock {
+    padding-top: 0.25*$button-size;
+}
+
+.superspace {
+    padding-left: 120px!important;
     
 }
+
+
+
+.skills__block_html {}
 
 /* Начало внутри блока */
 
 .skill__blockicon {
-    height: 50px;
-    width: 50; 
-    background-image: url();
+    height: 2*$button-size;
+    width: 2*$button-size;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 12px;
+    color: white;
+    font-family: $head-font;
+    font-size: $h2fontsize;
+    font-weight: bold;
+    border-radius: 2px;
+    box-sizing: border-box;
+    position: absolute;
+    top: -1.4*$button-size;
+    left: 50%;
+    margin-left: -$button-size;
 }
+
+.skills__block_html {
+    border-top: 2px solid $html-color;
+    border-bottom: 2px solid $html-color;
     
+}
+
+.skills__block_css {
+    border-top: 2px solid $css-color;
+    border-bottom: 2px solid $css-color;
+}
+
+.skills__block_js {
+    border-top: 2px solid $js-color;
+    border-bottom: 2px solid $js-color;
+}
+
+
 
 .skill__htmlicon {
-    
+    background-color: $html-color;
 }
 
- 
 .skill__cssicon {
-    
+    background-color: $css-color;
+}
+
+.skill__jsicon {
+    background-color: $js-color;
 }
 
 
-.skill__blockhead {
-    
-}
-
+.skill__blockhead {}
 
 .textblock {}
-

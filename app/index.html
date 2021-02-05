@@ -20,7 +20,6 @@
                         <li><a name="aboutme">обо мне</a></li>
                         <li><a name="education">образование</a></li>
                         <li><a name="myskills">навыки</a></li>
-                        <li><a name="advantages">преимущества</a></li>
                         <li><a name="joboffer">работа</a></li>
                         <li><a name="contacts">контакты</a></li>
                     </ul>
@@ -28,51 +27,128 @@
             </div>
         </header>
         <section class="mainarea">
-            <div class="mainarea__spacewrapper aboutme">
+           
+           <div class="mainarea__spacewrapper aboutme">
                 <h1>Я Константин Дюбо</h1>
 
                 <p>Я начинающий верстальщик и фронтенд разработчик.</p>
 
-                <h2>Заголовок</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo dolores quo repellendus perspiciatis commodi eaque cumque obcaecati ea, dolor aspernatur assumenda tenetur vitae qui quam veniam nam ipsum. Expedita quos pariatur facilis sint, repellendus reprehenderit, nesciunt culpa alias ipsam tempore perspiciatis. Sint dolorem, temporibus nisi minima esse ut facilis nulla!</p>
 
             </div>
+            
+            <!--Начало секция про навыки -->
+
+
+            <div class="mainarea__spacewrapper skills">
+                <div class="head2__wrapper">
+                    <div class="head2__linemaker">
+                        <div class="head2__iconblock">Навыки</div>
+                    </div>
+                </div>
+                <div class='textblock superspace'>
+                    <p> Свои первые сайты я разрабатывал на основе конструкторов, таких как Platforma LP и Tilda. Примеры моих работ можно увидеть на Behance и Github.</p>
+                    <p>Этот сайт-порфолио я разработал уже самостоятельно. Для повышения производительности я использовал Gulp. Для отдельных элементов на страницы подключены библитеки JQuery и SlickSlider. При оформлении страницы в работе со стилями использую SCSS и методологию БЭМ, применяю иконочные шрифтами и SVG-изображения. </p>
+                </div>
+
+                <div class="skills__blockwrapper">
+                    <div class="skills__block skills__block_html">
+                        <div class="skill__blockicon skill__htmlicon">_ HTML</div>
+                        <!-- <div class="skill__blockhead">HTML</div> -->
+                        <div class='skills__textblock'>
+                            <p>Первые знания HTML я получил еще во время обучения в университете, используя их при создании онлайн-опросников, форм тестов и информационных страниц. Позднее я также применял их при создании сайтов с помощью визуальных редакторов и инструментов. В настоящее время я работаю непосредственно с HTML кодом</p>
+                        </div>
+                    </div>
+
+
+
+                    <div class="skills__block skills__block_css">
+                        <div class="skill__blockicon skill__cssicon">_ CSS</div>
+                        <!-- <div class="skill__blockhead">CSS</div> -->
+                        <div class='skills__textblock'>
+                            <p>Системное представление о применении CSS и адаптивной верстки я приобрел, пройдя несколько обучающих курсов в 2019/ 2020 году и получив практический опыт верстки сайтов. В настоящее время я применяю синтаксис SCSS и осваиваю его возможности. Использую технологии CSS Flex и CSS Grid, изучаю основы анимации и SVG.</p>
+                        </div>
+                    </div>
+
+
+
+                    <div class="skills__block skills__block_js">
+                        <div class="skill__blockicon skill__jsicon">_ JS</div>
+                        <!-- <div class="skill__blockhead">HTML</div> -->
+                        <div class='skills__textblock'>
+                            <p>В настоящее время я нахожусь в процессе активного изучения Javascript и JQuery, имею опыт их применения для работы с элементами DOM, например для скрытия и отображения отдельных элементов и блоков на веб-странице, настройки интерфейса и проверки данных при заполнении форм и переключения оформления.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='textblock'>
+                    <p>Также я имею опыт работы в операционных системах Windows и LinuxMint, использую основные команды терминале при установке пакетов, при работе с NPM и Git.</p>
+                    <p>Имею опыт работы в графических редакторах Adobe Photoshop, GIMP и Inkscape. При работе с макетами также применял Adobe Fireworks и Figma. В дизайне ориентируюсь на принципы Material Design.
+                </div>
+            </div>
+
+            <!--Конец секция про навыки -->
+            <!--Начал секция про образование -->
+            
             <div class="mainarea__spacewrapper education">
 
-                <h2>Образование</h2>
+                <!--<h2>Образование</h2>-->
+                <div class="head2__wrapper">
+                    <div class="head2__linemaker">
+                        <div class="head2__iconblock">Образование</div>
+                    </div>
+                </div>
 
-                <p>С 2017 года я развиваю свои знания и профессиональные навыки в области верстки, дизайна и веб-программирования. Актуальные курсы и образовательные программы, которые я прошел к настоящему времени представлены на слайдах.</p>
+
+                <div class='textblock superspace'>
+                    <p>С 2017 года я развиваю свои знания и профессиональные навыки в области верстки, дизайна и веб-программирования. Актуальные курсы и образовательные программы, которые я прошел к настоящему времени представлены на слайдах.</p>
+                </div>
             </div>
 
             @@include('_sliderbtn.html')
 
-            <div class="mainarea__spacewrapper">
-                <h2>Работа</h2>
-                <p>В настоящее время я ищу возможность начать работу в
-                    команде, где я смогу применить уже имеющиеся навыки и
-                    развиваться дальше, решая рабочие задачи.</p>
+            <!--Конец секция про образование -->
+            <!--Начал секция про работу -->
+            
+            <div class="mainarea__spacewrapper job">
+                <!--<h2>Работа</h2>-->
+                <div class="head2__wrapper">
+                    <div class="head2__linemaker">
+                        <div class="head2__iconblock">Работа</div>
+                    </div>
+                </div>
+                <div class='textblock superspace'>
 
-                <p>Мне интересны вакансии:</p>
-                <ul class="mylist">
-                    <li>Cпециалист поддержки сайтов</li>
-                    <li>Контент-менеджер в разработке сайтов</li>
-                    <li>Junior HTML-верстальщик</li>
-                    <li>Стажер frontend-разработчик</li>
-                </ul>
-                а также практика, стажировка и участие в проектах по данным направлениям деятельности.
-                <h2>Опыт</h2>
+                    <p>В настоящее время я ищу возможность начать работу в
+                        команде, где я смогу применить уже имеющиеся навыки и
+                        развиваться дальше, решая рабочие задачи.Мне интересны вакансии:</p>
+                    <ul class="mylist">
+                        <li>Cпециалист поддержки сайтов</li>
+                        <li>Контент-менеджер в разработке сайтов</li>
+                        <li>Junior HTML-верстальщик</li>
+                        <li>Стажер frontend-разработчик</li>
+                    </ul>
+                    <p>а также практика, стажировка и участие в проектах по данным направлениям деятельности.Ниже представлена информация о&nbsp;моей профессиональной деятельности. Для&nbsp;просмотра описания разверните интересующий раздел. </p>
+                </div>
+
+                @@include('_acc.html')
+                
+                <div class="mainarea__spacewrapper mypages">
+
+                <div class="textblock mypages__iconcol">
+                    <a href='#' class="mypages__icon mypages__icon_pdf"></a>
+                    <a href='#' class="mypages__icon mypages__icon_in"></a>
+                    <a href='#' class="mypages__icon mypages__icon_hh"></a>
+                </div>
                 <div class='textblock'>
-                    <p> Получить более подробную информацию и запросить рекомендации можно в моем <a href='#'>резюме</a>.</p>
-                    <p>Ниже представлена информация о моей профессиональной деятельности. Для просмотра описания разверните интересующий раздел. </p>
+                    <p> Получить более подробную информацию и запросить рекомендации можно в моем <a href='#'>резюме</a> на сайте HeadHunter. Также вы&nbsp;можете загрузить резюме в&nbsp;формате&nbsp;.pdf и&nbsp;посетить мою страницу &nbsp;LinkedIn. </p>
+                </div>
                 </div>
 
 
-                @@include('_acc.html')
-
+                <!--
                 <div class="mypages__wrapper">
                     <div class="mypages__textcol">
-                        <p>Также вы&nbsp;можете загрузить резюме в&nbsp;формате&nbsp;.pdf и&nbsp;посетить мои страницы на&nbsp;LinkedIn и&nbsp;HeadHunter </p>
+                        <p> Получить более подробную информацию и запросить рекомендации можно в моем <a href='#'>резюме</a> на сайте HeadHunter. Также вы&nbsp;можете загрузить резюме в&nbsp;формате&nbsp;.pdf и&nbsp;посетить мою страницу &nbsp;LinkedIn. </p>
                     </div>
                     <div class="mypages__iconcol">
                         <a href='#' class="mypages__icon mypages__icon_pdf"></a>
@@ -81,69 +157,12 @@
                     </div>
 
                 </div>
-
+-->
 
             </div>
 
 
-            <!--Начало секция про навыки -->
-
-
-            <div class="mainarea__spacewrapper skills">
-                <h2>Навыки</h2>
-
-                <div class="skills__blockwrapper">
-                    <div class="skills__block skills__block_html">
-                        <div class="skill__blockicon skill__htmlicon"></div>
-                        <div class="skill__blockhead">HTML</div>
-                        <div class='textblock'>
-                            <p>Первые знания HTML я получил еще во время обучения в университете, используя их при создании онлайн-опросников, форм тестов и информационных страниц. Позднее я также применял их при создании сайтов с помощью визуальных редакторов и инструментов. В настоящее время в процессе верстки я работаю непосредствеено с HTML кодом</p>
-                        </div>
-                    </div>
-
-
-                    <div class="skills__block skills__block_css">
-                        <div class="skill__blockicon skill__htmlicon"></div>
-                        <div class="skill__blockhead">CSS</div>
-                        <div class='textblock'>
-                            <p>Системное представлении о применении CSS и адаптивной верстки я приобрел, пройдя несколько обучающих курсов в 2019/ 2020 году и получив практический опыт верстки сайтов. В настоящее время я применяю синтаксис SCSS и осваиваю предоставляемые им возможности. Использую технологии CSS Flex и CSS Grid, изучаю возможности анимации и SVG.</p>
-                        </div>
-                    </div>
-
-
-                    <div class="skills__block skills__block_js">
-                        <div class="skill__blockicon skill__htmlicon"></div>
-                        <div class="skill__blockhead">JS</div>
-                        <div class='textblock'>
-                            <p>В настоящее время я нахожусь в процессе активного изучения, имею опыт применения Javascript и JQuery для работы с элементами DOM, например для скрытия и отображения отдельных элементов и блоков на веб-странице, настройки интерфейса и проверки данных при заполнении пользовательских форм и переключения оформления.</p>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-
-
-
-                        <div class='textblock'>
-                            <p> Свои первые сайты я разрабатывал на основе конструкторов, таких как Platforma LP и Tilda. Примеры моих работ можно увидеть на Behance и Github</p>
-                            <p>Этот сайт-порфолио я разработал уже самостоятельно. Для повышения производительности я использовал Gulp. Для отдельных элементов на страницы подключены библитеки JQuery и SlickSlider. При оформлении страницы в работе со стилями использую SCSS, применяю иконочные шрифтами и SVG-изображениям. </p>
-                            <p>Имею опыт работы в операционных системах Windows и LinuxMint, использую основные команды терминале при установке пакетов, при работе с NPM и Git.</p>
-                            <p>Имею опыт работы в графических редакторах Adobe Photoshop, GIMP и Inkscape. При работе с макетами также применял Adobe Fireworks и Figma.
-                        </div>
-
-
-
-
-
-
-
-                    </div>
-
-
-                    <!--Конец секции про навыки -->
+            <!--Конец секции про навыки -->
 
 
         </section>
