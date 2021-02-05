@@ -5,6 +5,10 @@ $basic-shadow: 0px 3px 2px 1px rgba(0,0,0,0.25);
 $button-border: 2px solid $button-color;
 $line-border: 2px solid $line-color;
 
+$illuminating: #F5DF4D;
+$ultimategray: #939597;
+
+$h2fontsize: 18px;
 
 @import 'reset.scss';
 @import 'fonts.scss';
@@ -14,8 +18,6 @@ $line-border: 2px solid $line-color;
 @import 'acc.scss';
 @import 'skills.scss';
 @import 'myform.scss';
-
-
 
 body {
     font-size: 16px;
@@ -29,18 +31,16 @@ p {
 /* Начало оформление отдельных элементов */
 
 .textblock {
-    padding: 12px 0px;
+    padding: 0.5*$button-size 0px;
 }
 
 .mylist {
     list-style-type: square;
     list-style-position: outside;
     list-style-image: none;
-
 }
 
 .mypages__wrapper {
-    padding: 48px 0px;
     display: flex;
     width: 100%;
 }
@@ -108,7 +108,7 @@ footer {
 }
 
 .mainarea__spacewrapper {
-    padding: 48px;
+    padding: 24px 60px;
     max-width: 100%;
 }
 
@@ -267,20 +267,55 @@ h1 {
 h2 {
     padding-bottom: 20px;
     font-family: $head-font, sans-serif;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 2*$h2fontsize;
+    /*font-weight: bold;*/
     padding: 3px 0px;
     color: #1c1c1c;
-    border-bottom: 2px dashed #1c1c1c;
-    margin-top: 40px;
+    border-bottom: 2px solid #1c1c1c;
+    /*margin-top: 40px;*/
     margin-bottom: 12px;
     text-transform: uppercase;
 }
 
+
+.head2__wrapper {
+    height: 120px;
+    padding-top: 90px;
+    box-sizing: border-box;
+}
+
+.head2__linemaker {
+    /*height: $button-size;*/
+    border-bottom: 2px solid $illuminating;
+    position: relative;
+    z-index: 2;
+   
+}
+
+.head2__iconblock {
+    background-color: $illuminating;
+    width: 90px;
+    height: 90px;
+    font-family: $head-font, sans-serif;
+    font-size: 1.75*$h2fontsize;
+    text-transform: uppercase;
+    display: flex;
+    align-items: flex-end;
+    box-sizing: border-box;
+    padding-left: 24px;
+    padding-bottom: 18px;
+    position: absolute;
+    bottom: -18px;
+    left: -24px;
+    z-index: 1;
+    
+}
+
+
 footer h2 {
     color: white;
     margin-top: 12px;
-    border-bottom: 2px dashed white;
+    border-bottom: 2px solid white;
 
 }
 
