@@ -1,12 +1,14 @@
 $button-color: blue;
 $line-color: grey;
 $button-size: 36px;
-$basic-shadow: 0px 3px 2px 1px rgba(0,0,0,0.25);
+$basic-shadow: 0px 3px 2px 1px rgba(0, 0, 0, 0.25);
 $button-border: 2px solid $button-color;
 $line-border: 2px solid $line-color;
 
 $illuminating: #F5DF4D;
 $ultimategray: #939597;
+$maxdark: darken($ultimategray, 50%);
+$maxlight: lighten($ultimategray, 25%);
 
 $h2fontsize: 18px;
 
@@ -32,6 +34,8 @@ p {
 
 .textblock {
     padding: 0.5*$button-size 0px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .mylist {
@@ -50,10 +54,23 @@ p {
     padding-right: 24px;
 }
 
+.mypages {
+    /*display: flex;
+    justify-content: center;*/
+    
+}
+
 .mypages__iconcol {
-    width: 40%;
     display: flex;
-    justify-content: space-around;
+    width: 100%;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.mypages__iconwrapper {
+    width: 60%;
+    display: flex;
+    justify-content:space-around;
     align-items: center;
 }
 
@@ -90,27 +107,41 @@ p {
 /*ГЛОБАЛЬНАЯ РАЗМЕТКА: ЦВЕТА И ОФОРМЛЕНИЕ */
 
 .inner {
-    background-color: blue;
+    background-image: linear-gradient(90deg, $maxdark, $maxlight);
 }
 
 header {
-    background-color: black;
+    /*background-color: black;*/
 }
 
 .mainarea {
-    background-color: white;
+    /*background-color: white;*/
     color: black;
 }
 
 footer {
     grid-area: f;
-    background-color: purple;
+    /*background-color: purple;*/
+    box-sizing: border-box;
 }
 
 .mainarea__spacewrapper {
-    padding: 24px 60px;
+    padding: 48px 60px;
     max-width: 100%;
 }
+
+.paper {
+    background-color: lighten($maxlight, 12.5%);
+    color: $maxdark;
+}
+
+.glass {
+    /*background-color: $maxdark;*/
+    color: lighten($maxlight, 12.5%);
+    background-color: rgba(black, 0.25);
+    border-left: 1px solid $maxdark;
+}
+
 
 /*КОНЕЦ: ГЛОБАЛЬНАЯ РАЗМЕТКА: ЦВЕТА И ОФОРМЛЕНИЕ */
 
@@ -120,7 +151,7 @@ footer {
 
 /* начало десктоп */
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1380px) {
     .inner {
         box-sizing: border-box;
         display: grid;
@@ -141,7 +172,6 @@ footer {
 
     footer {
         grid-area: f;
-        box-sizing: border-box;
     }
 
     nav {
@@ -155,7 +185,7 @@ footer {
 
 /* начало ноутбук */
 
-@media screen and (min-width: 1000px) and (max-width: 1399px) {
+@media screen and (min-width: 1000px) and (max-width: 1379px) {
     .inner {
         box-sizing: border-box;
         display: grid;
@@ -175,7 +205,6 @@ footer {
 
     footer {
         grid-area: f;
-        box-sizing: border-box;
     }
 
     nav {
@@ -212,7 +241,6 @@ footer {
 
     footer {
         grid-area: f;
-        box-sizing: border-box;
     }
 }
 
@@ -244,7 +272,6 @@ footer {
     }
     footer {
         grid-area: f;
-        box-sizing: border-box;
     }
 }
 */
@@ -289,7 +316,7 @@ h2 {
     border-bottom: 2px solid $illuminating;
     position: relative;
     z-index: 2;
-   
+
 }
 
 .head2__iconblock {
@@ -308,7 +335,7 @@ h2 {
     bottom: -18px;
     left: -24px;
     z-index: 1;
-    
+
 }
 
 
@@ -331,7 +358,7 @@ h3 {
 
 /* начало десктоп */
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1380px) {
     .header__stickywrapper {
         color: white;
         box-sizing: border-box;
@@ -339,37 +366,40 @@ h3 {
         top: 0px;
     }
 
-    nav {
+    .globalnav {
         width: 100%;
-        /*min-height: 100vh;  ПЕРЕНЕСЕН В ДЕСКТОПЫ */
         box-sizing: border-box;
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        font-family: $head-font, sans-serif;
-        font-size: 1.8rem;
+        /*font-family: $head-font, sans-serif;
+        letter-spacing: 1px;*/
+       pagging-right: 24px;
+    }
+    
+    .globalnav ul {
+        width: 100%; 
+        padding-right: 24px;
     }
 
     .globalnav a {
         text-decoration: none;
-        color: lightgray;
+        color: $maxlight;
         text-transform: uppercase;
-        border-right: 3px solid black;
+        border-right: 2px solid rgba(black, 0);
         font-family: $head-font, sans-serif;
-        background-color: black;
         display: block;
         text-align: right;
-        padding: 10px 10px;
+        padding: 10px 24px;
         font-size: 20px;
     }
 
     .globalnav a:hover {
         text-decoration: none;
         color: white;
-        background-color: black;
         text-transform: uppercase;
-        text-shadow: 1px 1px 10px springgreen;
-        border-right: 3px solid springgreen;
+        text-shadow: 1px 1px 10px $illuminating;
+        border-right: 2px solid $illuminating;
     }
 }
 
@@ -379,7 +409,7 @@ h3 {
 
 /* начало ноутбук*/
 
-@media screen and (min-width: 1000px) and (max-width: 1399px) {
+@media screen and (min-width: 1000px) and (max-width: 1379px) {
     .header__stickywrapper {
         color: white;
         box-sizing: border-box;
@@ -628,7 +658,7 @@ td {
 }
 
 .skills {
-    background-color: white;
+    /*background-color: white;*/
 }
 
 .maintitle {
@@ -647,7 +677,9 @@ td {
 
 .footer__stickywrapper {
     box-sizing: border-box;
-    background-color: blue;
+    /*background-color: yellowgreen;*/
+    display: flex;
+    align-items: center;
 }
 
 .footer__1stcontainer {
@@ -659,16 +691,18 @@ td {
 
 .footer__2ndcontainer {
     box-sizing: border-box;
-    padding: 20px;
-    background-color: darkslategrey;
+    padding: 60px;
+    /*background-color: darkslategrey;*/
     color: white;
+    width: 100%;
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1380px) {
 
     .footer__stickywrapper {
         position: sticky;
         top: 0px;
+        height: 100vh;
     }
 
     .footer__1stcontainer {
@@ -676,7 +710,7 @@ td {
     }
 
     .footer__2ndcontainer {
-        height: 50vh;
+        /*height: 50vh;*/
     }
 }
 

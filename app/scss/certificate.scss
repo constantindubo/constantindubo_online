@@ -41,7 +41,7 @@
 /*Конец секция кнопки*/
 
 .sliderwrapper {
-    border: 1px dashed blue;
+    /*border: 1px dashed red;*/
     overflow: hidden;
 }
 
@@ -74,7 +74,7 @@
 
 
 .slider__item {
-    margin: 32px 12px;
+    margin: 0px 12px 36px 12px;
     box-shadow: $basic-shadow;
     background-color: white;
     border-radius: 3px;
@@ -98,7 +98,7 @@
 /* Ограничивающая оболочка */
 .slick-list {
     overflow: hidden;
-    background-color: grey;
+    /*background-color: grey;*/
 }
 
 /* Лента слайдов */
@@ -139,6 +139,7 @@
     border: $button-border;
     border-radius: 50%;
     background-color: white;
+
 
     /* Начало стилей icomoon */
     font-family: 'icomoon' !important;

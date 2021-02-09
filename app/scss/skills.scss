@@ -8,6 +8,11 @@ $js-color: #939597;
 */
 
 
+.aboutme {
+    height: 100vh;
+    box-sizing: border-box;
+}
+
 .skills__blockwrapper {
     display: flex;
     justify-content: space-between;
@@ -19,6 +24,7 @@ $js-color: #939597;
 .skills__block {
     max-width: 28%;
     margin-top: 2*$button-size;
+    margin-bottom: 24px;
     padding-top: 0.6*$button-size;
     position: relative;
     color: black;
