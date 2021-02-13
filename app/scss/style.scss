@@ -225,15 +225,23 @@ footer {
         display: grid;
         /*grid-template-rows: 100vh 1fr 1fr;*/
         grid-template-columns: 1fr 100vh 2fr;
-        grid-template-areas: 
-            "h m f"
-            "h m f"
+        grid-template-areas:
+            "h a f"
             "h m f";
     }
+
+
+    .aboutme {
+        grid-area: a;
+
+    }
+
+
 
     header {
         grid-area: h;
     }
+
 
     .mainarea {
         grid-area: m;
@@ -250,7 +258,6 @@ footer {
     }
 }
 
-
 /* конец десктоп */
 
 
@@ -262,14 +269,20 @@ footer {
         display: grid;
         /*grid-template-rows: 1fr 1fr;*/
         grid-template-columns: 240px 1fr;
-        grid-template-areas: 
-            "h m"
-            "h f";
+        grid-template-areas:
+            "h a"
+            "h f"
+            "h m";
     }
 
     header {
         grid-area: h;
     }
+
+    .aboutme {
+        grid-area: a;
+    }
+
 
     .mainarea {
         grid-area: m;
@@ -289,15 +302,19 @@ footer {
 /* конец ноутбук */
 
 
-/* начало планшет */
+/* начало ленты */
 
-@media screen and (min-width: 800px) and (max-width: 999px) {
+@media screen and (max-width: 999px) {
     .inner {
         box-sizing: border-box;
         display: grid;
-        grid-template-rows: 90px 1fr;
-        grid-template-columns: 1fr 50vw 1fr;
-        grid-template-areas: "h h h""m m m""f f f";
+        /*grid-template-rows: 90px 1fr;
+        grid-template-columns: 1fr 50vw 1fr;*/
+        grid-template-areas: 
+            "h"
+            "a"
+            "f"
+            "m";
     }
 
     header {
@@ -305,6 +322,10 @@ footer {
         box-sizing: border-box;
         display: flex;
         align-items: center;
+    }
+    
+    .aboutme {
+        grid-area: a;
     }
 
     .mainarea {
@@ -320,37 +341,6 @@ footer {
 
 /* конец планшет */
 
-
-/* начало смартфон */
-
-
-/*
-@media screen and (max-width: 799px) {
-    .inner {
-        box-sizing: border-box;
-       display: grid;
-        grid-template-rows: 1fr 1fr;
-        grid-template-columns: 1fr 50vw 1fr;
-        grid-template-areas: "h h h" "m m m" "f f f";
-    }
-    header {
-        grid-area: h;
-        box-sizing: border-box;
-        display: flex;
-        align-items: center;
-    }
-    .mainarea {
-        grid-area: m;
-        box-sizing: border-box;
-    }
-    footer {
-        grid-area: f;
-    }
-}
-*/
-
-
-/* конец смартфон */
 
 
 /*КОНЕЦ ГЛОБАЛЬНАЯ РАЗМЕТКА: ГРИД-РАСКЛАДКА */
