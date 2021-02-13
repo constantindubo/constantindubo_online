@@ -178,7 +178,7 @@ header {
 }
 
 footer {
-    grid-area: f;
+    /*grid-area: f;*/
     /*background-color: purple;*/
     box-sizing: border-box;
 }
@@ -225,7 +225,10 @@ footer {
         display: grid;
         /*grid-template-rows: 100vh 1fr 1fr;*/
         grid-template-columns: 1fr 100vh 2fr;
-        grid-template-areas: "h m f""h m f""h m f";
+        grid-template-areas: 
+            "h m f"
+            "h m f"
+            "h m f";
     }
 
     header {
@@ -259,7 +262,9 @@ footer {
         display: grid;
         /*grid-template-rows: 1fr 1fr;*/
         grid-template-columns: 240px 1fr;
-        grid-template-areas: "h m m""h f f";
+        grid-template-areas: 
+            "h m"
+            "h f";
     }
 
     header {

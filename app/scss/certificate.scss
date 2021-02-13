@@ -1,3 +1,10 @@
+/*   Исправление ширины слайдера   */
+
+* {
+  min-height: 0;
+  min-width: 0;
+}
+
 .sliderwrapper {
     /*border: 1px dashed red;*/
     overflow: hidden;
@@ -20,7 +27,7 @@
 }
 
 .certbox__image {
-    
+
     width: 100%;
 }
 
@@ -29,7 +36,6 @@
 .cert_1 {
     background-image: url(../img/slides/spbgu_webdes_900.png);
 }
-
 
 .cert_2 {
     background-image: url(../img/slides/itmo_webdev_900.png);
@@ -48,8 +54,6 @@
 }
 
 */
-
-
 
 /*Начало секции с кнопкой*/
 
@@ -93,10 +97,6 @@
 /*Конец секция кнопки*/
 
 
-
-
-
-
 /***********************************/
 
 /* Слайдер */
@@ -137,8 +137,7 @@
 .slick-slide.slick-cloned {}
 
 
-
-/* Стрелка */ 
+/* Стрелка */
 
 .slick-arrow {
     position: absolute;
@@ -154,7 +153,8 @@
     border: 2px solid $illuminating;
     border-radius: 3px;
     background-color: rgba($illuminating, 0);
-        &:hover {
+
+    &:hover {
         box-shadow: 0px 6px 12px 1px rgba($illuminating, 0.25);
     }
 
@@ -162,7 +162,6 @@
         box-shadow: $basic-shadow;
         background-color: rgba($illuminating, 0.1);
     }
-
 
     /* Начало стилей icomoon */
     font-family: 'icomoon' !important;
@@ -176,7 +175,7 @@
     -moz-osx-font-smoothing: grayscale;
     /* Конец стилей icomoon */
 
-   /* &:hover {
+    /* &:hover {
         box-shadow: 0px 3px 6px 1px rgba(0, 0, 0, 0.25);
     }
 
@@ -204,6 +203,7 @@
     &:before {
         content: "\ea40";
     }
+
     /* Конец стилей icomoon */
 }
 
@@ -243,5 +243,3 @@
 /* Элемент точки */
 .slick-dots li button {}
 
-
-/* Начало стилей для анимации кнопок */
