@@ -9,7 +9,7 @@ $(document).ready(function () {
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
-        centerMode: true,
+        centerMode: false,
         centerPadding: '60px'
     });
 });
@@ -18,12 +18,12 @@ $(document).ready(function () {
 
 // Начало установки высоты слайда
 
-$(document).ready(function () {
-    $('.certbox').height($('.certbox').width() * 0.7);
-    $(window).resize(function () {
-        $('.certbox').height($('.certbox').width() * 0.7);
-    });
-});
+//$(document).ready(function () {
+//    $('.certbox').height($('.certbox').width() * 0.7);
+//    $(window).resize(function () {
+//       $('.certbox').height($('.certbox').width() * 0.7);
+//    });
+//});
 
 // Конец установки высоты слайда
 

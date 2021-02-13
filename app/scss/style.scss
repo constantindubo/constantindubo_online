@@ -10,7 +10,12 @@ $ultimategray: #939597;
 $maxdark: darken($ultimategray, 50%);
 $maxlight: lighten($ultimategray, 25%);
 
-$h2fontsize: 18px;
+$h2fontsize: 24px;
+
+
+
+
+
 
 @import 'reset.scss';
 @import 'fonts.scss';
@@ -31,6 +36,59 @@ p {
 }
 
 /* Начало оформление отдельных элементов */
+
+
+.aboutme {
+    height: 100vh;
+    box-sizing: border-box;
+    background-image: url(../img/aboutmeq.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-color: darken($ultimategray, 12.5) !important;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    text-align: left;
+}
+
+.aboutme__titleblock {
+    text-align: right;
+    margin-bottom: 10vh;
+}
+
+.aboutme__title {
+    padding: 18px 0px;
+    font-family: $head-font, sans-serif;
+    font-size: 42px;
+    line-height: 1.2;
+    /*font-weight: bold;*/
+    text-transform: uppercase;
+    line-height: 1.25;
+}
+
+.aboutme__iam {
+    text-transform: uppercase;
+    font-size: 18px;
+    color: $maxlight;
+    padding-bottom: 36px;
+}
+
+.mysign {
+    display: inline-block;
+    width: 300px;
+    height: 100px;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+.mysign__path {
+    fill: $maxlight;
+}
 
 .textblock {
     padding: 0.5*$button-size 0px;
@@ -57,20 +115,20 @@ p {
 .mypages {
     /*display: flex;
     justify-content: center;*/
-    
+
 }
 
 .mypages__iconcol {
     display: flex;
     width: 100%;
-    justify-content:space-around;
+    justify-content: space-around;
     align-items: center;
 }
 
 .mypages__iconwrapper {
     width: 60%;
     display: flex;
-    justify-content:space-around;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -135,11 +193,21 @@ footer {
     color: $maxdark;
 }
 
+.darkpaper {
+    background-color: rgba(lighten($maxlight, 12.5%), 0.875);
+    color: $maxdark;
+}
+
 .glass {
     /*background-color: $maxdark;*/
     color: lighten($maxlight, 12.5%);
     background-color: rgba(black, 0.25);
     border-left: 1px solid $maxdark;
+}
+
+.lightaccent {
+    color: $illuminating;
+    font-weight: bold;
 }
 
 
@@ -156,7 +224,7 @@ footer {
         box-sizing: border-box;
         display: grid;
         /*grid-template-rows: 100vh 1fr 1fr;*/
-        grid-template-columns: 1fr 50vw 2fr;
+        grid-template-columns: 1fr 100vh 2fr;
         grid-template-areas: "h m f""h m f""h m f";
     }
 
@@ -282,14 +350,7 @@ footer {
 
 /*КОНЕЦ ГЛОБАЛЬНАЯ РАЗМЕТКА: ГРИД-РАСКЛАДКА */
 
-h1 {
-    padding: 48px 0px 24px 0px;
-    font-family: $head-font, sans-serif;
-    font-size: 36px;
-    line-height: 1.2;
-    font-weight: bold;
-    text-transform: uppercase;
-}
+
 
 h2 {
     padding-bottom: 20px;
@@ -374,11 +435,11 @@ h3 {
         justify-content: flex-end;
         /*font-family: $head-font, sans-serif;
         letter-spacing: 1px;*/
-       pagging-right: 24px;
+        pagging-right: 24px;
     }
-    
+
     .globalnav ul {
-        width: 100%; 
+        width: 100%;
         padding-right: 24px;
     }
 
@@ -679,7 +740,9 @@ td {
     box-sizing: border-box;
     /*background-color: yellowgreen;*/
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .footer__1stcontainer {
@@ -691,11 +754,28 @@ td {
 
 .footer__2ndcontainer {
     box-sizing: border-box;
-    padding: 60px;
+    padding: 0.5*$button-size 60px;
     /*background-color: darkslategrey;*/
-    color: white;
+    /*color: white;*/
     width: 100%;
 }
+
+.footer__blockhead {
+    padding-bottom: 20px;
+    font-family: $head-font, sans-serif;
+    font-size: $h2fontsize;
+    padding: 3px 0px;
+    color: $maxdark;
+    border-bottom: 2px solid #1c1c1c;
+    /*margin-top: 40px;*/
+    margin-bottom: 12px;
+    text-transform: uppercase;
+
+}
+
+
+
+
 
 @media screen and (min-width: 1380px) {
 
