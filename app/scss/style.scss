@@ -13,8 +13,7 @@ $maxlight: lighten($ultimategray, 25%);
 $h2fontsize: 24px;
 
 
-
-
+/**********************************/
 
 
 @import 'reset.scss';
@@ -30,6 +29,10 @@ body {
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
 }
+
+
+
+
 
 p {
     padding: 6px 0;
@@ -160,26 +163,128 @@ p {
 /* Конец оформление отдельных элементов */
 
 
+/**********************************/
+
+@mixin desktop {
+    @media screen and (min-width: 1380px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media screen and (min-width: 1000px) and (max-width: 1379px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: 700px) and (max-width: 999px) {
+        @content;
+    }
+}
+
+@mixin smart {
+    @media screen and (min-width: 360px) and (max-width: 699px) {
+        @content;
+    }
+}
+
+/***   NEW GRID AREAS start  ***/
+
+.aboutme {
+    grid-area: a;
+}
+
+header {
+    grid-area: h;
+}
+
+.mainarea {
+    grid-area: m;
+}
+
+footer {
+    grid-area: f;
+}
+
+
+.inner {
+    background-image: linear-gradient(90deg, $maxdark, $maxlight);
+
+    @include desktop {
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: 1fr 100vh 2fr;
+        grid-template-areas:
+            "h a f"
+            "h m f";
+    }
+
+    @include laptop {
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: 240px 1fr;
+        grid-template-areas:
+            "h a"
+            "h f"
+            "h m";
+    }
+
+    @include tablet {
+        box-sizing: border-box;
+        display: grid;
+        grid-template-areas: "h"
+            "a"
+            "f"
+            "m";
+    }
+
+    @include smart {
+        box-sizing: border-box;
+        display: grid;
+        grid-template-areas:
+            "h"
+            "a"
+            "f"
+            "m";
+    }
+}
+
+
+/***   NEW GRID AREAS end  ***/
+
+
+
 
 
 /*ГЛОБАЛЬНАЯ РАЗМЕТКА: ЦВЕТА И ОФОРМЛЕНИЕ */
 
-.inner {
-    background-image: linear-gradient(90deg, $maxdark, $maxlight);
-}
+
 
 header {
-    /*background-color: black;*/
+    @include tablet {
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+    }
+
+    @include smart {
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+    }
 }
 
 .mainarea {
-    /*background-color: white;*/
     color: black;
+    box-sizing: border-box;
+
+    @include desktop {
+        min-height: 300px;
+    }
 }
 
 footer {
-    /*grid-area: f;*/
-    /*background-color: purple;*/
     box-sizing: border-box;
 }
 
@@ -187,6 +292,18 @@ footer {
     padding: 48px 60px;
     max-width: 100%;
 }
+
+nav {
+    @include desktop {
+        min-height: 100vh;
+    }
+
+    @include laptop {
+        min-height: 100vh;
+    }
+}
+
+/***   MATERIALS start   ***/
 
 .paper {
     background-color: lighten($maxlight, 12.5%);
@@ -210,142 +327,7 @@ footer {
     font-weight: bold;
 }
 
-
-/*КОНЕЦ: ГЛОБАЛЬНАЯ РАЗМЕТКА: ЦВЕТА И ОФОРМЛЕНИЕ */
-
-
-/*НАЧАЛО ГЛОБАЛЬНАЯ РАЗМЕТКА: ГРИД-РАСКЛАДКА */
-
-
-/* начало десктоп */
-
-@media screen and (min-width: 1380px) {
-    .inner {
-        box-sizing: border-box;
-        display: grid;
-        /*grid-template-rows: 100vh 1fr 1fr;*/
-        grid-template-columns: 1fr 100vh 2fr;
-        grid-template-areas:
-            "h a f"
-            "h m f";
-    }
-
-
-    .aboutme {
-        grid-area: a;
-
-    }
-
-
-
-    header {
-        grid-area: h;
-    }
-
-
-    .mainarea {
-        grid-area: m;
-        min-height: 300px;
-        box-sizing: border-box;
-    }
-
-    footer {
-        grid-area: f;
-    }
-
-    nav {
-        min-height: 100vh;
-    }
-}
-
-/* конец десктоп */
-
-
-/* начало ноутбук */
-
-@media screen and (min-width: 1000px) and (max-width: 1379px) {
-    .inner {
-        box-sizing: border-box;
-        display: grid;
-        /*grid-template-rows: 1fr 1fr;*/
-        grid-template-columns: 240px 1fr;
-        grid-template-areas:
-            "h a"
-            "h f"
-            "h m";
-    }
-
-    header {
-        grid-area: h;
-    }
-
-    .aboutme {
-        grid-area: a;
-    }
-
-
-    .mainarea {
-        grid-area: m;
-        box-sizing: border-box;
-    }
-
-    footer {
-        grid-area: f;
-    }
-
-    nav {
-        min-height: 100vh;
-    }
-}
-
-
-/* конец ноутбук */
-
-
-/* начало ленты */
-
-@media screen and (max-width: 999px) {
-    .inner {
-        box-sizing: border-box;
-        display: grid;
-        /*grid-template-rows: 90px 1fr;
-        grid-template-columns: 1fr 50vw 1fr;*/
-        grid-template-areas: 
-            "h"
-            "a"
-            "f"
-            "m";
-    }
-
-    header {
-        grid-area: h;
-        box-sizing: border-box;
-        display: flex;
-        align-items: center;
-    }
-    
-    .aboutme {
-        grid-area: a;
-    }
-
-    .mainarea {
-        grid-area: m;
-        box-sizing: border-box;
-    }
-
-    footer {
-        grid-area: f;
-    }
-}
-
-
-/* конец планшет */
-
-
-
-/*КОНЕЦ ГЛОБАЛЬНАЯ РАЗМЕТКА: ГРИД-РАСКЛАДКА */
-
-
+/***   MATERIALS end   ***/
 
 h2 {
     padding-bottom: 20px;
@@ -411,16 +393,156 @@ h3 {
 
 /*** HEADER ***/
 
+.header__stickywrapper {
+
+    color: white;
+    box-sizing: border-box;
+
+    @include desktop {
+        position: sticky;
+        top: 0px;
+    }
+
+    @include laptop {
+        position: sticky;
+        top: 0px;
+    }
+
+    @include tablet {
+        position: sticky;
+        top: 0px;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-content: center;
+    }
+
+    @include smart {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        align-content: center;
+    }
+}
+
+
+.globalnav {
+
+    @include desktop {
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        /*font-family: $head-font, sans-serif;
+        letter-spacing: 1px;*/
+        pagging-right: 24px;
+    }  
+}
+
+
+.global__link {
+
+    @include desktop {
+        text-decoration: none;
+        color: $maxlight;
+        text-transform: uppercase;
+        border-right: 2px solid rgba(black, 0);
+        font-family: $head-font, sans-serif;
+        display: block;
+        text-align: right;
+        padding: 10px 24px;
+        font-size: 20px;
+
+        &:hover {
+            text-decoration: none;
+            color: white;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 10px $illuminating;
+            border-right: 2px solid $illuminating;
+        }
+    }
+
+    @include laptop {
+        text-decoration: none;
+        color: lightgrey;
+        text-transform: uppercase;
+        border-right: 5px solid black;
+        font-family: $head-font, sans-serif;
+        background-color: black;
+        display: block;
+        text-align: right;
+        padding: 10px 20px;
+        font-size: 20px;
+
+        &:hover {
+            text-decoration: none;
+            color: white;
+            background-color: black;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 10px springgreen;
+            border-right: 5px solid springgreen;
+        }
+    }
+
+    @include tablet {
+        text-decoration: none;
+        color: lightgray;
+        text-transform: uppercase;
+        border-bottom: 5px solid black;
+        font-family: $head-font, sans-serif;
+        background-color: black;
+        text-align: center;
+        padding: 10px 5px;
+        font-size: 20px;
+
+        &:hover {
+            text-decoration: none;
+            color: white;
+            background-color: black;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 10px springgreen;
+            border-bottom: 5px solid springgreen;
+        }
+    }
+
+    @include smart {
+        display: block;
+        text-decoration: none;
+        color: lightgray;
+        text-transform: uppercase;
+        border-bottom: 3px solid black;
+        font-family: $head-font, sans-serif;
+        background-color: black;
+        text-align: center;
+        font-size: 20px;
+        box-sizing: border-box;
+        width: 100%;
+
+        &:hover {
+            text-decoration: none;
+            color: white;
+            background-color: black;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 10px springgreen;
+            border-bottom: 3px solid springgreen;
+        }
+    }
+}
+
 
 /* начало десктоп */
 
 @media screen and (min-width: 1380px) {
+    
+    /*
     .header__stickywrapper {
         color: white;
         box-sizing: border-box;
         position: sticky;
         top: 0px;
     }
+    */
 
     .globalnav {
         width: 100%;
@@ -438,7 +560,9 @@ h3 {
         padding-right: 24px;
     }
 
-    .globalnav a {
+    .global__link {
+        /*
+
         text-decoration: none;
         color: $maxlight;
         text-transform: uppercase;
@@ -448,14 +572,18 @@ h3 {
         text-align: right;
         padding: 10px 24px;
         font-size: 20px;
+        */
     }
+ 
 
-    .globalnav a:hover {
+    .global__link:hover {
+        /*
         text-decoration: none;
         color: white;
         text-transform: uppercase;
         text-shadow: 1px 1px 10px $illuminating;
         border-right: 2px solid $illuminating;
+        */
     }
 }
 
@@ -466,12 +594,15 @@ h3 {
 /* начало ноутбук*/
 
 @media screen and (min-width: 1000px) and (max-width: 1379px) {
+    
+    /*
     .header__stickywrapper {
         color: white;
         box-sizing: border-box;
         position: sticky;
         top: 0px;
     }
+    */
 
     nav {
         width: 100%;
@@ -484,7 +615,8 @@ h3 {
         font-size: 1.8rem;
     }
 
-    .globalnav a {
+    .global__link {
+        /*
         text-decoration: none;
         color: lightgrey;
         text-transform: uppercase;
@@ -495,15 +627,18 @@ h3 {
         text-align: right;
         padding: 10px 20px;
         font-size: 20px;
+        */
     }
 
-    .globalnav a:hover {
+    .global__link:hover {
+        /*
         text-decoration: none;
         color: white;
         background-color: black;
         text-transform: uppercase;
         text-shadow: 1px 1px 10px springgreen;
         border-right: 5px solid springgreen;
+        */
     }
 }
 
@@ -514,6 +649,8 @@ h3 {
 /* начало планшет*/
 
 @media screen and (min-width: 800px) and (max-width: 999px) {
+
+    /*
     .header__stickywrapper {
         color: white;
         box-sizing: border-box;
@@ -524,6 +661,7 @@ h3 {
         justify-content: center;
         align-content: center;
     }
+    */
 
     .logo__container {
         background-color: yellow;
@@ -549,7 +687,8 @@ h3 {
         align-content: center;
     }
 
-    .globalnav a {
+    .global__link {
+        /*
         text-decoration: none;
         color: lightgray;
         text-transform: uppercase;
@@ -559,18 +698,20 @@ h3 {
         text-align: center;
         padding: 10px 5px;
         font-size: 20px;
+        */
     }
 
-    .globalnav a:hover {
+    .global__link:hover {
+        /*
         text-decoration: none;
         color: white;
         background-color: black;
         text-transform: uppercase;
         text-shadow: 1px 1px 10px springgreen;
         border-bottom: 5px solid springgreen;
+        */
     }
 }
-
 
 /* конец планшет */
 
@@ -578,6 +719,8 @@ h3 {
 /* начало смартфон*/
 
 @media screen and (max-width: 799px) {
+
+    /*
     .header__stickywrapper {
         color: white;
         box-sizing: border-box;
@@ -586,6 +729,7 @@ h3 {
         justify-content: flex-end;
         align-content: center;
     }
+    */
 
     .globalnav {
         display: block;
@@ -609,6 +753,7 @@ h3 {
         justify-content: center;
         align-content: center;
         }*/
+    
     .globalnav ul {
         display: flex;
         width: 100%;
@@ -620,7 +765,8 @@ h3 {
         width: 100%;
     }
 
-    .globalnav a {
+    .global__link {
+        /*
         display: block;
         text-decoration: none;
         color: lightgray;
@@ -632,15 +778,18 @@ h3 {
         font-size: 20px;
         box-sizing: border-box;
         width: 100%;
+        */
     }
 
-    .globalnav a:hover {
+    .global__link:hover {
+        /*
         text-decoration: none;
         color: white;
         background-color: black;
         text-transform: uppercase;
         text-shadow: 1px 1px 10px springgreen;
         border-bottom: 3px solid springgreen;
+        */
     }
 }
 
