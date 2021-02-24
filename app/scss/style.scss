@@ -262,14 +262,14 @@ footer {
 
 
 header {
+    box-sizing: border-box;
+    
     @include tablet {
-        box-sizing: border-box;
         display: flex;
         align-items: center;
     }
 
     @include smart {
-        box-sizing: border-box;
         display: flex;
         align-items: center;
     }
@@ -438,173 +438,8 @@ h3 {
         letter-spacing: 1px;*/
         pagging-right: 24px;
     }  
-}
-
-
-.global__link {
-
-    @include desktop {
-        text-decoration: none;
-        color: $maxlight;
-        text-transform: uppercase;
-        border-right: 2px solid rgba(black, 0);
-        font-family: $head-font, sans-serif;
-        display: block;
-        text-align: right;
-        padding: 10px 24px;
-        font-size: 20px;
-
-        &:hover {
-            text-decoration: none;
-            color: white;
-            text-transform: uppercase;
-            text-shadow: 1px 1px 10px $illuminating;
-            border-right: 2px solid $illuminating;
-        }
-    }
-
+    
     @include laptop {
-        text-decoration: none;
-        color: lightgrey;
-        text-transform: uppercase;
-        border-right: 5px solid black;
-        font-family: $head-font, sans-serif;
-        background-color: black;
-        display: block;
-        text-align: right;
-        padding: 10px 20px;
-        font-size: 20px;
-
-        &:hover {
-            text-decoration: none;
-            color: white;
-            background-color: black;
-            text-transform: uppercase;
-            text-shadow: 1px 1px 10px springgreen;
-            border-right: 5px solid springgreen;
-        }
-    }
-
-    @include tablet {
-        text-decoration: none;
-        color: lightgray;
-        text-transform: uppercase;
-        border-bottom: 5px solid black;
-        font-family: $head-font, sans-serif;
-        background-color: black;
-        text-align: center;
-        padding: 10px 5px;
-        font-size: 20px;
-
-        &:hover {
-            text-decoration: none;
-            color: white;
-            background-color: black;
-            text-transform: uppercase;
-            text-shadow: 1px 1px 10px springgreen;
-            border-bottom: 5px solid springgreen;
-        }
-    }
-
-    @include smart {
-        display: block;
-        text-decoration: none;
-        color: lightgray;
-        text-transform: uppercase;
-        border-bottom: 3px solid black;
-        font-family: $head-font, sans-serif;
-        background-color: black;
-        text-align: center;
-        font-size: 20px;
-        box-sizing: border-box;
-        width: 100%;
-
-        &:hover {
-            text-decoration: none;
-            color: white;
-            background-color: black;
-            text-transform: uppercase;
-            text-shadow: 1px 1px 10px springgreen;
-            border-bottom: 3px solid springgreen;
-        }
-    }
-}
-
-
-/* начало десктоп */
-
-@media screen and (min-width: 1380px) {
-    
-    /*
-    .header__stickywrapper {
-        color: white;
-        box-sizing: border-box;
-        position: sticky;
-        top: 0px;
-    }
-    */
-
-    .globalnav {
-        width: 100%;
-        box-sizing: border-box;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        /*font-family: $head-font, sans-serif;
-        letter-spacing: 1px;*/
-        pagging-right: 24px;
-    }
-
-    .globalnav ul {
-        width: 100%;
-        padding-right: 24px;
-    }
-
-    .global__link {
-        /*
-
-        text-decoration: none;
-        color: $maxlight;
-        text-transform: uppercase;
-        border-right: 2px solid rgba(black, 0);
-        font-family: $head-font, sans-serif;
-        display: block;
-        text-align: right;
-        padding: 10px 24px;
-        font-size: 20px;
-        */
-    }
- 
-
-    .global__link:hover {
-        /*
-        text-decoration: none;
-        color: white;
-        text-transform: uppercase;
-        text-shadow: 1px 1px 10px $illuminating;
-        border-right: 2px solid $illuminating;
-        */
-    }
-}
-
-
-/* конец десктоп */
-
-
-/* начало ноутбук*/
-
-@media screen and (min-width: 1000px) and (max-width: 1379px) {
-    
-    /*
-    .header__stickywrapper {
-        color: white;
-        box-sizing: border-box;
-        position: sticky;
-        top: 0px;
-    }
-    */
-
-    nav {
         width: 100%;
         /*min-height: 100vh;  ПЕРЕНЕСЕН В ДЕСКТОПЫ */
         box-sizing: border-box;
@@ -613,104 +448,104 @@ h3 {
         justify-content: flex-end;
         font-family: $head-font, sans-serif;
         font-size: 1.8rem;
+        
     }
-
-    .global__link {
-        /*
-        text-decoration: none;
-        color: lightgrey;
-        text-transform: uppercase;
-        border-right: 5px solid black;
-        font-family: $head-font, sans-serif;
-        background-color: black;
+    
+    @include smart {    
         display: block;
-        text-align: right;
-        padding: 10px 20px;
-        font-size: 20px;
-        */
-    }
-
-    .global__link:hover {
-        /*
-        text-decoration: none;
-        color: white;
-        background-color: black;
-        text-transform: uppercase;
-        text-shadow: 1px 1px 10px springgreen;
-        border-right: 5px solid springgreen;
-        */
     }
 }
 
 
-/* конец ноутбук */
+.global__link {
+    text-decoration: none;
+    color: $maxlight;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-family: $head-font, sans-serif;
+
+    &:hover {
+        color: white;
+        text-shadow: 1px 1px 10px $illuminating;
+    }
+
+    @include desktop {
+
+        border-right: 2px solid rgba(black, 0);
+        font-family: $head-font, sans-serif;
+        display: block;
+        text-align: right;
+        padding: 10px 24px;
+
+        &:hover {
+            border-right: 2px solid $illuminating;
+        }
+    }
+
+    @include laptop {
+
+        border-right: 2px solid rgba(black, 0);
+        display: block;
+        text-align: right;
+        padding: 10px 20px;
+
+        &:hover {
+            border-right: 5px solid $illuminating;
+        }
+    }
+
+    @include tablet {
+
+        border-bottom: 2px solid rgba(black, 0);
+        text-align: center;
+        padding: 10px 5px;
+        display: inline-block;
+
+        &:hover {
+            border-bottom: 2px solid $illuminating;
+        }
+    }
+
+    @include smart {
+        display: block;
+        border-bottom: 2px solid rgba(black, 0);
+        text-align: center;
+        width: 100%;
+
+        &:hover {
+            border-bottom: 2px solid $illuminating;
+        }
+    }
+}
+
+
+.globalnav ul {
+    @include desktop {
+        width: 100%;
+        padding-right: 24px;
+    }
+    
+    @include smart {
+        width: 100%;
+        padding-right: 24px;
+    }
+    
+}
+
+
+
 
 
 /* начало планшет*/
 
 @media screen and (min-width: 800px) and (max-width: 999px) {
 
-    /*
-    .header__stickywrapper {
-        color: white;
-        box-sizing: border-box;
-        position: sticky;
-        top: 0px;
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        align-content: center;
-    }
-    */
-
-    .logo__container {
-        background-color: yellow;
-        height: 200px;
-        box-sizing: border-box;
-    }
-
     .globalnav li {
         display: inline-block;
         padding: 5px;
     }
 
-    /*.globalnav {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        align-content: center;
-        }*/
-    ul.nav__menu {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        align-content: center;
-    }
-
-    .global__link {
-        /*
-        text-decoration: none;
-        color: lightgray;
-        text-transform: uppercase;
-        border-bottom: 5px solid black;
-        font-family: $head-font, sans-serif;
-        background-color: black;
-        text-align: center;
-        padding: 10px 5px;
-        font-size: 20px;
-        */
-    }
-
-    .global__link:hover {
-        /*
-        text-decoration: none;
-        color: white;
-        background-color: black;
-        text-transform: uppercase;
-        text-shadow: 1px 1px 10px springgreen;
-        border-bottom: 5px solid springgreen;
-        */
-    }
 }
 
 /* конец планшет */
@@ -720,39 +555,14 @@ h3 {
 
 @media screen and (max-width: 799px) {
 
-    /*
-    .header__stickywrapper {
-        color: white;
-        box-sizing: border-box;
-        display: flex;
-        width: 100%;
-        justify-content: flex-end;
-        align-content: center;
-    }
-    */
 
-    .globalnav {
-        display: block;
-        width: 100%;
-    }
 
-    .logo__container {
-        background-color: yellow;
-        height: 200px;
-        box-sizing: border-box;
-    }
 
     .globalnav li {
         display: inline-block;
         padding: 5px;
-    }
-
-    /*.globalnav {
-        display: flex;
         width: 100%;
-        justify-content: center;
-        align-content: center;
-        }*/
+    }
     
     .globalnav ul {
         display: flex;
@@ -761,50 +571,11 @@ h3 {
         padding: 10px;
     }
 
-    .globalnav li {
-        width: 100%;
-    }
-
-    .global__link {
-        /*
-        display: block;
-        text-decoration: none;
-        color: lightgray;
-        text-transform: uppercase;
-        border-bottom: 3px solid black;
-        font-family: $head-font, sans-serif;
-        background-color: black;
-        text-align: center;
-        font-size: 20px;
-        box-sizing: border-box;
-        width: 100%;
-        */
-    }
-
-    .global__link:hover {
-        /*
-        text-decoration: none;
-        color: white;
-        background-color: black;
-        text-transform: uppercase;
-        text-shadow: 1px 1px 10px springgreen;
-        border-bottom: 3px solid springgreen;
-        */
-    }
 }
 
 
 /* конец смартфон*/
 
-
-/*
-a {
-	display: block;
-	text-align: right;
-	padding: 10px 20px;
-	font-size: 20px;
-}
-*/
 
 
 /* MAIN */
