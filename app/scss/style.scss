@@ -31,7 +31,35 @@ body {
 }
 
 
+/**********************************/
 
+
+@mixin desktop {
+    @media screen and (min-width: 1380px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media screen and (min-width: 1000px) and (max-width: 1379px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: 700px) and (max-width: 999px) {
+        @content;
+    }
+}
+
+@mixin smart {
+    @media screen and (min-width: 360px) and (max-width: 699px) {
+        @content;
+    }
+}
+
+
+/**********************************/
 
 
 p {
@@ -54,6 +82,8 @@ p {
     align-items: flex-end;
     flex-direction: column;
     text-align: left;
+
+    @include smart {}
 }
 
 .aboutme__titleblock {
@@ -154,40 +184,11 @@ p {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='267' height='267' viewBox='0 0 267 267' class='undefined'%3E%3Cstyle%3E .a%7B fill:%23e20019; %7D .b%7B fill:%23fff; font-variation-settings:normal; stop-color:%23000; vector-effect:none; %7D%0A%3C/style%3E%3Cellipse cx='132' cy='132' rx='132' ry='132' class='a'/%3E%3Cpath d='m53 71h22v46c0 0 13-17 31-12 21 5 21 22 21 38v45h-21c0 0 0-31 0-46 0-14-6-26-21-20-5 2-10 8-10 26 0 13 0 24 0 40-13 0-22 0-22 0z' class='b'/%3E%3Cpath d='m137 71h22v46c0 0 13-17 31-12 21 5 21 22 21 38v45h-21c0 0 0-31 0-46 0-14-6-26-21-20-5 2-10 8-10 26 0 13 0 24 0 40-13 0-22 0-22 0z' class='b'/%3E%3C/svg%3E");
 }
 
-
-
-
-
-
-
 /* Конец оформление отдельных элементов */
 
 
 /**********************************/
 
-@mixin desktop {
-    @media screen and (min-width: 1380px) {
-        @content;
-    }
-}
-
-@mixin laptop {
-    @media screen and (min-width: 1000px) and (max-width: 1379px) {
-        @content;
-    }
-}
-
-@mixin tablet {
-    @media screen and (min-width: 700px) and (max-width: 999px) {
-        @content;
-    }
-}
-
-@mixin smart {
-    @media screen and (min-width: 360px) and (max-width: 699px) {
-        @content;
-    }
-}
 
 /***   NEW GRID AREAS start  ***/
 
@@ -254,26 +255,8 @@ footer {
 /***   NEW GRID AREAS end  ***/
 
 
-
-
-
 /*ГЛОБАЛЬНАЯ РАЗМЕТКА: ЦВЕТА И ОФОРМЛЕНИЕ */
 
-
-
-header {
-    box-sizing: border-box;
-    
-    @include tablet {
-        display: flex;
-        align-items: center;
-    }
-
-    @include smart {
-        display: flex;
-        align-items: center;
-    }
-}
 
 .mainarea {
     color: black;
@@ -291,16 +274,20 @@ footer {
 .mainarea__spacewrapper {
     padding: 48px 60px;
     max-width: 100%;
+    
+    @include smart {
+    padding: 48px 24px; 
+    }
+    
+    
 }
 
-nav {
-    @include desktop {
-        min-height: 100vh;
+.superspace {
+    padding-left: 120px!important;
+        @include smart {
+    padding-left: 0px!important; 
     }
-
-    @include laptop {
-        min-height: 100vh;
-    }
+    
 }
 
 /***   MATERIALS start   ***/
@@ -342,7 +329,6 @@ h2 {
     text-transform: uppercase;
 }
 
-
 .head2__wrapper {
     height: 120px;
     padding-top: 90px;
@@ -354,7 +340,6 @@ h2 {
     border-bottom: 2px solid $illuminating;
     position: relative;
     z-index: 2;
-
 }
 
 .head2__iconblock {
@@ -373,15 +358,12 @@ h2 {
     bottom: -18px;
     left: -24px;
     z-index: 1;
-
 }
-
 
 footer h2 {
     color: white;
     margin-top: 12px;
     border-bottom: 2px solid white;
-
 }
 
 h3 {
@@ -390,13 +372,46 @@ h3 {
     font-size: 1.2rem;
 }
 
-
 /*** HEADER ***/
+
+header {
+    box-sizing: border-box;
+
+    @include tablet {
+        display: flex;
+        align-items: center;
+    }
+
+    @include smart {
+        display: flex;
+        align-items: center;
+        /*
+        position: fixed;
+        width: 100%;
+        top: 0%;
+        left: 0%;
+        z-index: 50;
+        
+        
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 60px;
+            background-color: rgba(yellow, 0.5);
+        }
+        */
+    }
+}
 
 .header__stickywrapper {
 
     color: white;
     box-sizing: border-box;
+    border: 2px blue dashed;
 
     @include desktop {
         position: sticky;
@@ -419,42 +434,173 @@ h3 {
 
     @include smart {
         display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        flex-direction: column;
+        background-color: $maxdark;
+
+        position: fixed;
         width: 100%;
-        justify-content: flex-end;
-        align-content: center;
+        top: 0%;
     }
 }
 
 
 .globalnav {
+    border: 2px aliceblue dashed;
+    box-sizing: border-box;
 
     @include desktop {
+        min-height: 100vh;
         width: 100%;
-        box-sizing: border-box;
         display: flex;
         align-items: center;
         justify-content: flex-end;
         /*font-family: $head-font, sans-serif;
         letter-spacing: 1px;*/
         pagging-right: 24px;
-    }  
-    
+    }
+
     @include laptop {
+        min-height: 100vh;
         width: 100%;
-        /*min-height: 100vh;  ПЕРЕНЕСЕН В ДЕСКТОПЫ */
-        box-sizing: border-box;
+        /*min-height: 100vh;  ПЕРЕНЕСЕН В ДЕСКТОПЫ */ 
         display: flex;
         align-items: center;
         justify-content: flex-end;
         font-family: $head-font, sans-serif;
         font-size: 1.8rem;
-        
+
     }
-    
-    @include smart {    
-        display: block;
+
+    @include smart {
+        display: flex;
+        position: relative;
+        width: 100%;
+        justify-content: flex-end;
+
+        /*display: block;
+        
+        z-index: 2;
+        background-color: blue;*/
     }
 }
+
+
+
+
+.header__burger {
+    display: none;
+
+    @include smart {
+        display: block;
+        box-sizing: border-box;
+        position: relative;
+        width: 24px;
+        height: 24px;
+        margin: 18px;
+        z-index: 200;
+
+        &:before {
+            content: '';
+            position: absolute;
+            background-color: #fff;
+            width: 100%;
+            height: 2px;
+            left: 0;
+            top: 0;
+            transition: all 0.2s ease 0s;
+        }
+
+        &.active:before {
+            transform: rotate(45deg);
+            top: 11px;
+
+        }
+
+
+
+        &:after {
+            content: '';
+            position: absolute;
+            background-color: #fff;
+            width: 100%;
+            height: 2px;
+            left: 0;
+            bottom: 0;
+            transition: all 0.2s ease 0s;
+
+        }
+
+        &.active:after {
+            transform: rotate(-45deg);
+            bottom: 11px;
+
+        }
+
+        span {
+            content: '';
+            position: absolute;
+            background-color: #fff;
+            width: 100%;
+            height: 2px;
+            left: 0;
+            bottom: 11px;
+            transition: all 0.2s ease 0s;
+        }
+
+        &.active span {
+            transform: scale(0);
+            
+        }
+    }
+}
+
+
+
+
+.globalnav ul {
+    @include desktop {
+        width: 100%;
+        padding-right: 24px;
+    }
+
+    @include smart {
+        box-sizing: border-box;
+        padding-right: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 0;
+        right: -100%;
+        padding: 72px 12px 12px 0px;
+        background-image: linear-gradient(120deg, rgba($maxdark, 1), rgba($maxdark, 0.65));
+        z-index: 150;
+        height: 100vh;
+        &.active {
+            right: 0;
+        }
+    }
+
+}
+
+
+.globalnav li {
+
+    @include tablet {
+        display: inline-block;
+        padding: 5px;
+    }
+/*
+    @include smart {
+        display: inline-block;
+        padding: 5px;
+        width: 100%;
+    }
+*/
+}
+    
 
 
 .global__link {
@@ -510,72 +656,17 @@ h3 {
     @include smart {
         display: block;
         border-bottom: 2px solid rgba(black, 0);
-        text-align: center;
+        text-align: left;
+        padding: 0px 12px;
         width: 100%;
+        line-height: $button-size;
+        text-transform: none;
 
         &:hover {
             border-bottom: 2px solid $illuminating;
         }
     }
 }
-
-
-.globalnav ul {
-    @include desktop {
-        width: 100%;
-        padding-right: 24px;
-    }
-    
-    @include smart {
-        width: 100%;
-        padding-right: 24px;
-    }
-    
-}
-
-
-
-
-
-/* начало планшет*/
-
-@media screen and (min-width: 800px) and (max-width: 999px) {
-
-    .globalnav li {
-        display: inline-block;
-        padding: 5px;
-    }
-
-}
-
-/* конец планшет */
-
-
-/* начало смартфон*/
-
-@media screen and (max-width: 799px) {
-
-
-
-
-    .globalnav li {
-        display: inline-block;
-        padding: 5px;
-        width: 100%;
-    }
-    
-    .globalnav ul {
-        display: flex;
-        width: 100%;
-        flex-direction: column;
-        padding: 10px;
-    }
-
-}
-
-
-/* конец смартфон*/
-
 
 
 /* MAIN */
@@ -658,21 +749,25 @@ td {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
+    @include desktop {
+        position: sticky;
+        top: 0px;
+        height: 100vh;        
+    }
 }
 
-.footer__1stcontainer {
-    box-sizing: border-box;
-    padding: 20px;
-    background-color: grey;
-    color: white;
-}
-
-.footer__2ndcontainer {
+.footer__container {
     box-sizing: border-box;
     padding: 0.5*$button-size 60px;
     /*background-color: darkslategrey;*/
     /*color: white;*/
     width: 100%;
+
+    @include smart {
+        padding: 0.5*$button-size 24px;
+
+    }
 }
 
 .footer__blockhead {
@@ -685,29 +780,8 @@ td {
     /*margin-top: 40px;*/
     margin-bottom: 12px;
     text-transform: uppercase;
-
 }
 
-
-
-
-
-@media screen and (min-width: 1380px) {
-
-    .footer__stickywrapper {
-        position: sticky;
-        top: 0px;
-        height: 100vh;
-    }
-
-    .footer__1stcontainer {
-        height: 50vh;
-    }
-
-    .footer__2ndcontainer {
-        /*height: 50vh;*/
-    }
-}
 
 /*--------- footer */
 

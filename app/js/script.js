@@ -46,3 +46,11 @@ $(document).ready(function () {
 
 // Конец раскрытия блока аккордеона 
 
+// Начало преключения бургера
+
+$(document).ready(function () {
+    $('.header__burger').click(function (event) {
+        $('.header__burger,.global__menu').toggleClass('active');
+    });
+});
+
