@@ -2,21 +2,15 @@ $html-color: #f06428;
 $css-color: #32aadc;
 $js-color: #f0be1e;
 
-/*$html-color: #939597;
-$css-color: #939597;
-$js-color: #939597;
-*/
-
-
-
-
 .skills__blockwrapper {
     display: flex;
     justify-content: space-between;
-    
+
+    @include smart {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
-
-
 
 .skills__block {
     max-width: 28%;
@@ -25,18 +19,23 @@ $js-color: #939597;
     padding-top: 0.6*$button-size;
     position: relative;
     color: black;
-    font-size: 14px;
+    font-size: $pfontsize;
+
+    @include smart {
+        max-width: 100%;
+        border-bottom: none !important;
+        margin-top: 36px;
+        padding-top: 0;
+        margin-bottom: 12px;
+        padding: 0 0 0 24px;
+    }
+
 }
 
 .skills__textblock {
     padding-top: 0.25*$button-size;
+
 }
-
-
-
-
-
-.skills__block_html {}
 
 /* Начало внутри блока */
 
@@ -57,12 +56,21 @@ $js-color: #939597;
     top: -1.4*$button-size;
     left: 50%;
     margin-left: -$button-size;
+
+    @include smart {
+        left: 36px;
+        top: -$button-size;
+        height: $button-size;
+        width: 3*$button-size;
+        font-weight: 400;
+        padding: 0px 12px;
+    }
 }
 
 .skills__block_html {
     border-top: 2px solid $html-color;
     border-bottom: 2px solid $html-color;
-    
+
 }
 
 .skills__block_css {
@@ -75,8 +83,6 @@ $js-color: #939597;
     border-bottom: 2px solid $js-color;
 }
 
-
-
 .skill__htmlicon {
     background-color: $html-color;
 }
@@ -88,7 +94,6 @@ $js-color: #939597;
 .skill__jsicon {
     background-color: $js-color;
 }
-
 
 .skill__blockhead {}
 

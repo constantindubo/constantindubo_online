@@ -8,6 +8,7 @@
 .sliderwrapper {
     /*border: 1px dashed red;*/
     overflow: hidden;
+    padding-bottom: 24px;
 }
 
 .slider__item {
@@ -16,6 +17,13 @@
     /*box-shadow: $basic-shadow;*/
     /*background-color: white;*/
     border-radius: 2px;
+    
+
+    @include smart {
+        padding: 6px; 
+        margin: 0px;
+    }
+
 }
 
 .certbox {
@@ -24,7 +32,26 @@
     background-position: center;
     background-repeat: no-repeat;
     box-sizing: border-box;
+    
+    /*
+        @include smart {
+        padding: 12px;
+    }
+    */
+ 
 }
+
+/*
+.slick-center > .certbox {
+    @include smart {
+        padding: 0px;
+    }
+
+    background-color: yellow;
+}
+*/
+
+
 
 .certbox__image {
 
@@ -62,6 +89,10 @@
     display: flex;
     justify-content: flex-start;
     padding: 12px 0px;
+    @include smart {
+        justify-content: center;
+        padding:  0px;
+    }
 }
 
 .glassbtn {
@@ -92,6 +123,9 @@
 .certcheck__anno {
     display: flex;
     padding: 0px 6px;
+    @include smart {
+        display: none;
+    }
 }
 
 /*Конец секция кнопки*/
@@ -131,7 +165,13 @@
 .slick-slide.slick-current {}
 
 /* Слайд по центру */
-.slick-slide.slick-center {}
+.slick-slide.slick-center {
+    /*
+        @include smart {
+        padding: 0px;
+    }
+    */
+}
 
 /* Клонированный слайд */
 .slick-slide.slick-cloned {}
@@ -243,3 +283,6 @@
 /* Элемент точки */
 .slick-dots li button {}
 
+
+
+    

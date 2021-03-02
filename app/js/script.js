@@ -10,7 +10,20 @@ $(document).ready(function () {
         slidesToShow: 1,
         slidesToScroll: 1,
         centerMode: false,
-        centerPadding: '60px'
+        centerPadding: '60px',
+        responsive: [
+            {
+                breakpoint: 786,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    centerMode: true,
+                    infinite: true,
+                    arrows: false,
+                    dots: false
+                }
+    }
+  ]
     });
 });
 
